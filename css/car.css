@@ -1,0 +1,227 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Squada+One&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+    box-sizing: border-box;
+    font-family: var(--font-family-2);
+}
+
+/* Variables */
+:root {
+    --main-color: #fa7104;
+    --second-color: #e05404;
+    --text-color: #060414;
+    --container-color: #efe8e0;
+    --bg-color: #f7f7f7;
+    --text-alter-color: #818181;
+    --poppins-font: "Poppins", sans-serif;
+    --font-family-2: "Squada One", sans-serif;
+}
+
+body {
+    color: var(--text-color);
+    background: var(--bg-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+section {
+    padding: 3rem 0 2rem;
+}
+
+.container {
+    max-width: 1500px;
+    margin: auto;
+    width: 100%;
+    padding: 0 30px;
+}
+
+header {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: var(--text-color);
+    padding: 17px 40px;
+}
+
+.navbar {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    column-gap: 1.5rem;
+}
+
+.nav-link {
+    font-size: 0.88rem;
+    color: var(--text-alter-color);
+    font-family: var(--poppins-font);
+    transition: 0.4s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.nav-link:hover {
+    color: var(--bg-color);
+    transition: 0.4s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.nav-icons {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-icons .bx {
+    color: var(--bg-color);
+    font-size: 20px;
+}
+
+.nav-icons .user-icon {
+    padding: 7px;
+    background: var(--main-color);
+    border-radius: 50%;
+}
+
+.nav-icons .user-icon:hover {
+    background: var(--second-color);
+    transition: 0.3s ease;
+}
+
+/* Rentals */
+.rentals .heading {
+    text-align: center;
+    font-size: 2.0rem;
+    font-weight: 500;
+    margin: 8rem auto;
+}
+
+.heading p {
+    max-width: 550px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-family: var(--poppins-font);
+    margin: 3rem auto;
+}
+
+.rentals-content {
+    display: grid;
+    grid-template-columns: repeat(2, 25rem);
+    gap: 8rem;
+    justify-content: center;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+    .rentals-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+.rental-box {
+    /* background: var(--container-color); */
+    width: 25rem;
+    padding: 5px;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+.rental-box:hover {
+    transform: translateY(-10px);
+    transition: transform 0.5s ease;
+}
+
+.rental-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rental-top h3 {
+    display: inline-block;
+    font-family: var(--poppins-font);
+    background: #fff;
+    font-size: 0.77rem;
+    padding: 4px 7px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.rental-top .bx {
+    font-size: 20px;
+    color: var(--text-alter-color);
+    cursor: pointer;
+}
+
+.rental-top .bx:hover {
+    color: var(--main-color);
+    transition: 0.3s ease;
+}
+
+.rental-box img {
+    margin: 1.4rem 0 1rem;
+    /* height: 120px; */
+    object-fit: cover;
+    object-position: center;
+}
+
+.rental-box h2 {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.rental-box h4 {
+    font-size: 0.94rem;
+    font-weight: 500;
+    color: var(--text-alter-color);
+    margin-top: 5px;
+}
+
+
+.price-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-btn p {
+    font-size: 0.97rem;
+}
+
+.price-btn p span {
+    color: var(--text-alter-color);
+}
+
+.rental-btn {
+    background: var(--text-color);
+    color: var(--bg-color);
+    padding: 10px 50px;
+    font-size: 0.97rem;
+    border-radius: 4px;
+}
+
+.rental-btn:hover {
+    background: var(--main-color);
+    transition: 0.4s ease;
+}
