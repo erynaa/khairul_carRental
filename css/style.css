@@ -20,7 +20,7 @@
     --bg-color: #f7f7f7;
     --text-alter-color: #818181;
     --poppins-font: "Poppins", sans-serif;
-    --font-family-2: "Public Sans", sans-serif
+    --font-family-2: "Public Sans", sans-serif;
 }
 
 body {
@@ -44,7 +44,7 @@ section {
 
 /* ========================================
 Container
-======================================== */ 
+======================================== */
 .container {
     max-width: 1200px;
     width: 100%;
@@ -54,7 +54,7 @@ Container
 
 /* ========================================
 Header & Navbar
-======================================== */ 
+======================================== */
 header {
     position: fixed;
     top: 0;
@@ -261,6 +261,7 @@ header {
     font-size: 0.95rem;
     color: #444;
 }
+
 /* ========================================
    Trending Section
 ======================================== */
@@ -296,7 +297,7 @@ header {
     background: #fff;
     display: inline-block;
     margin-bottom: 0.5rem;
-    
+
 }
 
 .trend-box img {
@@ -312,7 +313,8 @@ header {
 
 .information .heading h2 {
     font-size: 1.5rem;
-} 
+}
+
 .social-icons {
     display: flex;
     justify-content: center;
@@ -334,13 +336,14 @@ header {
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
+
 /* Hover animation */
 .social-icons a::before {
     content: "";
     position: absolute;
     width: 0;
     height: 0;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     top: 50%;
     left: 50%;
@@ -355,19 +358,38 @@ header {
 }
 
 .social-icons a i {
-    position: relative; /* to be above the hover effect */
+    position: relative;
+    /* to be above the hover effect */
     z-index: 1;
 }
 
 /* Specific icon colors */
-.fb-icon { color: #1877f2; }
-.fb-icon:hover { color: #fff; background: #145dbf; }
+.fb-icon {
+    color: #1877f2;
+}
 
-.tiktok-icon { color: #000; } 
-.tiktok-icon:hover { color: #fff; background: #69C9D0; }
+.fb-icon:hover {
+    color: #fff;
+    background: #145dbf;
+}
 
-.whatsapp-icon { color: #25d366; }
-.whatsapp-icon:hover { color: #fff; background: #008000; }
+.tiktok-icon {
+    color: #000;
+}
+
+.tiktok-icon:hover {
+    color: #fff;
+    background: #69C9D0;
+}
+
+.whatsapp-icon {
+    color: #25d366;
+}
+
+.whatsapp-icon:hover {
+    color: #fff;
+    background: #008000;
+}
 
 /* Optional: scale up on hover */
 .social-icons a:hover {
@@ -423,6 +445,117 @@ header {
     font-size: 0.85rem;
     color: #888;
 }
+
+/* ========================================
+   Booking Form
+======================================== */
+.booking h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+/* .booking form {
+    max-width: 420px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+} */
+
+.booking-bg {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("../images/LogoRental.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.booking-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+}
+
+.booking.container {
+    position: relative;
+    z-index: 2;
+    max-width: 480px;
+    width: 100%;
+    padding: 2rem;
+}
+
+.booking-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    border-radius: 20px;
+    padding: 2rem;
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    color: #fff;
+}
+
+.booking-card input,
+.booking-card select {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 14px;
+    font-size: 14px;
+}
+
+.booking-card label {
+    font-size: 13px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.booking-card h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.booking-card {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.form-actions .cta-btn,
+.form-actions .cancel-btn {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 1rem;
+}
+
+.cancel-btn {
+    flex: 1;
+    text-align: center;
+    padding: 14px;
+    background: #e74c3c; 
+    color: #fff;
+    font-size: 17px;
+    transition: 0.3s ease;
+}
+
+.cancel-btn:hover {
+    background: #c0392b;
+}
+
 
 /* ========================================
    Mobile Size
@@ -495,22 +628,68 @@ header {
     .reviews {
         padding: 2rem 1rem;
     }
+
+    .booking.container {
+        padding: 1.5rem;
+    }
+
+    .booking-card {
+        padding: 1.5rem;
+    }
 }
 
 /* Mobile Phones: up to 430px */
 @media (max-width: 430px) {
-    .intro-text h1 { font-size: 1.8rem; }
-    .intro-text h1 span { font-size: 1.8rem; }
-    .intro-desc { font-size: 0.9rem; }
-    .intro-features li { font-size: 0.85rem; }
-    .cta-btn { font-size: 0.85rem; padding: 10px 16px; }
-    .nav-logo img { width: 4.5rem; }
-    .navbar a { font-size: 0.7rem; }
-    .reviews { padding: 1.5rem 0.5rem; }
-    .nav { padding: 8px 12px; }
-    .nav-link { font-size: 0.75rem; }
-    .navbar { gap: 0.4rem; }
-    .nav-icons .bx { font-size: 18px; }
-    .trend-box { padding: 6px; }
-}
+    .intro-text h1 {
+        font-size: 1.8rem;
+    }
 
+    .intro-text h1 span {
+        font-size: 1.8rem;
+    }
+
+    .intro-desc {
+        font-size: 0.9rem;
+    }
+
+    .intro-features li {
+        font-size: 0.85rem;
+    }
+
+    .cta-btn {
+        font-size: 0.85rem;
+        padding: 10px 16px;
+    }
+
+    .nav-logo img {
+        width: 4.5rem;
+    }
+
+    .navbar a {
+        font-size: 0.7rem;
+    }
+
+    .reviews {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .nav {
+        padding: 8px 12px;
+    }
+
+    .nav-link {
+        font-size: 0.75rem;
+    }
+
+    .navbar {
+        gap: 0.4rem;
+    }
+
+    .nav-icons .bx {
+        font-size: 18px;
+    }
+
+    .trend-box {
+        padding: 6px;
+    }
+}

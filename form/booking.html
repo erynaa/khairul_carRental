@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khairul Car Rental | Tempahan</title>
+
+    <!-- Lint to CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- Socmed Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <section class="booking-bg">
+        <div class="booking container">
+            <h2>Tempahan Kenderaan</h2>
+
+            <form id="bookingForm" class="booking-card">
+                <input type="text" id="name" placeholder="Nama Penuh" required />
+                <input type="tel" id="phone" placeholder="No Telefon" required />
+
+                <select id="car" required>
+                    <option value="">Pilih Kenderaan</option>
+                    <option value="Perodua Bezza">Perodua Bezza</option>
+                    <option value="Perodua Axia">Perodua Axia</option>
+                    <option value="Perodua Alza">Perodua Alza</option>
+                    <option value="Proton Saga">Proton Saga</option>
+                    <option value="Hyundai Starex">Hyundai Starex</option>
+                    <option value="Mitsubishi Xpander">Mitsubishi Xpander</option>
+                </select>
+
+                <label>Tarikh Ambil</label>
+                <input type="date" id="pickup" required />
+
+                <label>Tarikh Pulang</label>
+                <input type="date" id="return" required />
+
+                <div class="form-actions">
+                    <button type="submit" class="cta-btn">
+                        <i class="fa-brands fa-whatsapp"></i> Hantar ke WhatsApp
+                    </button>
+
+                    <a href="../index.html" class="cancel-btn">Batal</a>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
