@@ -15,11 +15,15 @@
 <body>
     <section class="booking-bg">
         <div class="booking container">
-            <h2>Tempahan Kenderaan</h2>
-
             <form id="bookingForm" class="booking-card">
+                <h2>Khairul Rent A Car</h2>
+                <h1>
+                    Senai Airport | Senai | Kulai | Skudai |
+                    Kota Tinggi | Johor Bahru
+                </h1>
+
                 <input type="text" id="name" placeholder="Nama Penuh" required />
-                <input type="tel" id="phone" placeholder="No Telefon" required />
+                <input type="text" id="location" placeholder="Lokasi" required />
 
                 <select id="car" required>
                     <option value="">Pilih Kenderaan</option>
@@ -31,20 +35,64 @@
                     <option value="Mitsubishi Xpander">Mitsubishi Xpander</option>
                 </select>
 
-                <label>Tarikh Ambil</label>
-                <input type="date" id="pickup" required />
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Tarikh Pick Up</label>
+                        <input type="date" id="pickup" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Masa Pick Up</label>
+                        <input type="time" id="time_pickup" required />
+                    </div>
+                </div>
 
-                <label>Tarikh Pulang</label>
-                <input type="date" id="return" required />
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Tarikh Pulang</label>
+                        <input type="date" id="return" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Masa Pulang</label>
+                        <input type="time" id="time_return" required />
+                    </div>
+                </div>
+
+                <input type="text" id="total_date" placeholder="Jumlah Hari" required />
+                
+                <label>Jenis Perkhidmatan</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="service_type" value="Pickup" required />
+                        Pickup
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="service_type" value="Delivery" required />
+                        Delivery
+                    </label>
+                </div>
 
                 <div class="form-actions">
-                    <button type="submit" class="cta-btn">
+                    <button type="submit" class="submit-btn">
                         <i class="fa-brands fa-whatsapp"></i> Hantar ke WhatsApp
                     </button>
 
-                    <a href="../index.html" class="cancel-btn">Batal</a>
+                    <button type="button" class="cancel-btn" onclick="window.location.href='../index.html'">
+                        Batal
+                    </button>
                 </div>
 
+                <div class="booking-note">
+                    <h2>Minimum Rental</h2>
+                    <ul>
+                        <li>JB area = 1 day</li>
+                        <li>Outside JB / Singapore / Melaka / Seremban / KL = 2 days</li>
+                        <li> Pahang = 3 days</li>
+                        <li>Perak / Ipoh / Cameron = 4 days</li>
+                        <li>Pantai Timur / Utara = 4 days</li>
+                        <li>Perlis / Langkawi = 5 days</li>
+                        <li>Genting Highland = 3 days + Additional Insurance</li>
+                    </ul>
+                </div>
             </form>
         </div>
     </section>

@@ -44,7 +44,7 @@ section {
 
 /* ========================================
 Container
-======================================== */ 
+======================================== */
 .container {
     max-width: 1200px;
     width: 100%;
@@ -54,7 +54,7 @@ Container
 
 /* ========================================
 Header & Navbar
-======================================== */ 
+======================================== */
 header {
     position: fixed;
     top: 0;
@@ -72,7 +72,7 @@ header {
 }
 
 .nav-logo img {
-    width: 7rem;
+    width: 4rem;
     height: auto;
 }
 
@@ -120,7 +120,7 @@ header {
 
 /* ========================================
 Rental Section
-======================================== */ 
+======================================== */
 .rentals .heading {
     text-align: center;
     margin-bottom: 3rem;
@@ -212,12 +212,39 @@ Rental Section
 ======================================== */
 /* Mobile responsive */
 @media screen and (max-width: 768px) {
+    .navbar {
+        /* gap: 1rem; */
+        width: 100%;
+        padding: 8px 3rem;
+    }
+
+    .nav {
+        align-items: center;
+        padding: 8px 16px;
+    }
+
+    .nav-logo img {
+        width: 3.5rem;
+    }
+
     .rentals-content {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media screen and (max-width: 430px) {
+    .navbar a {
+        font-size: 0.7rem;
+    }
+
+    .nav {
+        padding: 8px 12px;
+    }
+
+    .nav-link {
+        font-size: 0.75rem;
+    }
+
     .rentals-content {
         grid-template-columns: repeat(2, 1fr)
     }

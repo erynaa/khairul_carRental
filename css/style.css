@@ -72,7 +72,7 @@ header {
 }
 
 .nav-logo img {
-    width: 7rem;
+    width: 4rem;
     height: auto;
 }
 
@@ -80,7 +80,7 @@ header {
     margin-left: auto;
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.6rem;
     position: static;
     transform: none;
 }
@@ -137,7 +137,7 @@ header {
         url("../images/LogoRental.png");
     background-size: cover;
     background-position: center;
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
 .intro-text h1 span {
@@ -145,6 +145,7 @@ header {
 }
 
 .intro-text h1 {
+    margin: 1rem 0;
     font-size: 3rem;
     line-height: 1.1;
     color: #fff;
@@ -160,11 +161,12 @@ header {
 
 .intro-features {
     list-style: none;
+    margin: 2rem 0;
 }
 
 .intro-features li {
     font-size: 1rem;
-    margin: 1rem 0;
+    margin: 1rem;
     color: #fff;
 }
 
@@ -174,14 +176,20 @@ header {
 }
 
 .cta-btn {
-    display: inline-block;
+    text-align: center;
     padding: 12px 1rem;
     font-size: 1rem;
     border-radius: 20px;
     width: 50%;
+    font-weight: 600;
+    letter-spacing: 1px;
     background: #0a7330;
     color: #fff;
     transition: 0.3s ease;
+}
+
+.cta-btn.blink {
+    animation: blinkPulse 1.2s infinite;
 }
 
 .cta-btn:hover {
@@ -192,11 +200,37 @@ header {
     margin-left: 8px;
 }
 
+.form-introductions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ========================================
+   Blink Effect
+======================================== */
+@keyframes blinkPulse {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.03);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 /* ========================================
    Booking Process Section
 ======================================== */
 .booking-process {
-    padding: 4rem 1rem;
+    padding: 2rem 1rem;
     background-color: #f8f9fb;
 }
 
@@ -252,7 +286,7 @@ header {
     counter-reset: step;
 }
 
-.booking-note {
+.process-note {
     margin-top: 2rem;
     padding: 1.2rem 1.5rem;
     background: #eef2f7;
@@ -455,13 +489,12 @@ header {
     color: #fff;
 }
 
-/* .booking form {
-    max-width: 420px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-} */
+.booking h1 {
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 2rem;
+    color: #fff;
+}
 
 .booking-bg {
     position: relative;
@@ -488,7 +521,7 @@ header {
 .booking.container {
     position: relative;
     z-index: 2;
-    max-width: 480px;
+    max-width: 500px;
     width: 100%;
     padding: 2rem;
 }
@@ -529,7 +562,32 @@ header {
     margin-top: 1rem;
 }
 
-.form-actions .cta-btn,
+.form-row {
+    display: flex;
+    gap: 12px;
+}
+
+.form-group {
+    flex: 1;
+}
+
+.form-group input {
+    width: 100%;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.form-actions .submit-btn,
 .form-actions .cancel-btn {
     width: 100%;
     border-radius: 10px;
@@ -538,15 +596,26 @@ header {
 .form-actions {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-top: 1rem;
+    gap: 10px;
+    /* margin-top: 0.5rem; */
+}
+
+.submit-btn {
+    flex: 1;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 14px;
+    background: #1da10b;
+    color: #fff;
+    font-size: 17px;
+    transition: 0.3s ease;
 }
 
 .cancel-btn {
     flex: 1;
     text-align: center;
     padding: 14px;
-    background: #e74c3c; 
+    background: #e74c3c;
     color: #fff;
     font-size: 17px;
     transition: 0.3s ease;
@@ -556,6 +625,27 @@ header {
     background: #c0392b;
 }
 
+.booking-note {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.25);
+    font-size: 13px;
+}
+
+.booking-note h2{
+    text-align: left;
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+
+.booking-note ul {
+    padding-left: 18px;
+}
+
+.booking-note li {
+    margin-bottom: 6px;
+    line-height: 1.1;
+}
 
 /* ========================================
    Mobile Size
@@ -570,13 +660,18 @@ header {
     }
 
     .navbar {
-        gap: 0.5rem;
+        /* gap: 1rem; */
         width: 100%;
+        padding: 8px 3rem;
     }
 
     .nav {
         align-items: center;
         padding: 8px 16px;
+    }
+
+    .nav-logo img {
+        width: 3.5rem;
     }
 
     .intro-text h1 {
@@ -661,10 +756,6 @@ header {
         padding: 10px 16px;
     }
 
-    .nav-logo img {
-        width: 4.5rem;
-    }
-
     .navbar a {
         font-size: 0.7rem;
     }
@@ -679,10 +770,6 @@ header {
 
     .nav-link {
         font-size: 0.75rem;
-    }
-
-    .navbar {
-        gap: 0.4rem;
     }
 
     .nav-icons .bx {
