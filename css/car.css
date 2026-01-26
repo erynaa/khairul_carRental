@@ -46,7 +46,7 @@ section {
 Container
 ======================================== */
 .container {
-    max-width: 1200px;
+    max-width: 1300px;
     width: 100%;
     margin: 0 auto;
     padding: 0 16px;
@@ -121,21 +121,50 @@ header {
 /* ========================================
 Rental Section
 ======================================== */
-.rentals .heading {
-    text-align: center;
-    margin-bottom: 3rem;
+.rentals-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
-.heading h2 {
-    font-family: var(--poppins-font);
+/* Sidebar */
+.filter-menu {
+    background: #f8f9fb;
+    padding: 20px;
+    border-radius: 12px;
+    height: fit-content;
 }
 
-.heading p {
-    max-width: 550px;
-    /* width: 100%; */
-    font-size: 0.9rem;
-    /* font-family: var(--poppins-font); */
-    margin: 1rem auto;
+.filter-menu h3 {
+    margin-bottom: 15px;
+    color: #0b1d3a;
+}
+
+.filter-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.filter-menu li {
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Hover only for non-active items */
+.filter-menu li:not(.active):hover {
+    background: #e6f4ec;  /* light green */
+    color: #0a7330;
+}
+
+/* Active item always dark green */
+.filter-menu li.active {
+    background: #0a7330;
+    color: #fff;
 }
 
 .rentals-content {
@@ -148,14 +177,47 @@ Rental Section
     padding: 10px;
     border-radius: 10px;
     background: #fff;
-    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: 0.3s ease;
-    border: 2px solid transparent;
 }
 
 .rental-box:hover {
-    /* background: #fefefe; */
-    border-color: var(--container-color);
+    transform: translateY(-6px);
+}
+
+.rental-box img {
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+.rental-btn {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #0a7330;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.rentals .heading {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.heading h2 {
+    font-family: var(--poppins-font);
+}
+
+.heading p {
+    max-width: 550px;
+    font-size: 0.9rem;
+    margin: 1rem auto;
 }
 
 .rental-top {
@@ -167,22 +229,12 @@ Rental Section
 .rental-top h3 {
     font-size: 1rem;
     font-family: var(--poppins-font);
-    /* font-weight: 600;
-    padding: 4px 6px;
-    background: #fff;
-    display: inline-block;
-    margin-bottom: 0.5rem; */
-}
-
-.rental-box img {
-    margin: 1rem 0;
 }
 
 .price-btn {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
-    /* align-items: center; */
 }
 
 .price-btn p {
@@ -193,18 +245,8 @@ Rental Section
     color: var(--text-alter-color);
 }
 
-.rental-btn {
-    background: var(--text-color);
-    color: var(--bg-color);
-    padding: 10px 0;
-    width: 100%;
-    font-size: 0.97rem;
-    border-radius: 4px;
-}
-
 .rental-btn:hover {
     background: var(--main-color);
-    /* transition: 0.4s ease; */
 }
 
 /* ========================================

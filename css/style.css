@@ -46,7 +46,7 @@ section {
 Container
 ======================================== */
 .container {
-    max-width: 1200px;
+    max-width: 1300px;
     width: 100%;
     margin: 0 auto;
     padding: 0 16px;
@@ -119,112 +119,182 @@ header {
 }
 
 /* ========================================
-   Introduction
+   Introduction Section
 ======================================== */
 .intro {
-    background: #f7f7f7;
+    background: linear-gradient(to right, #f8f9fb, #e0f7fa);
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
 }
+
+/* Optional subtle background car image */
+/* .intro::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('../images/LogoRental.png') center/cover no-repeat;
+    opacity: 0.08;
+    z-index: 0;
+} */
 
 .intro-card.container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 3rem;
-    padding: 2rem;
-    /* Background Image */
-    background-image:
-        linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.4)),
-        url("../images/LogoRental.png");
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
+    gap: 4rem;
+    position: relative;
+    z-index: 1;
 }
 
 .intro-text h1 span {
-    color: var(--main-color);
+    color: #ff7a00;
 }
 
 .intro-text h1 {
-    margin: 1rem 0;
+    margin: 2rem 0;
     font-size: 3rem;
     line-height: 1.1;
-    color: #fff;
+    color: #0b1d3a;
 }
 
 .intro-desc {
     margin: 2rem 0;
     font-size: 1.1rem;
-    color: #555;
+    color: #444;
     max-width: 500px;
-    color: #fff;
 }
 
 .intro-features {
     list-style: none;
     margin: 2rem 0;
+    padding: 0;
 }
 
 .intro-features li {
     font-size: 1rem;
-    margin: 1rem;
-    color: #fff;
+    margin-bottom: 10px;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.intro-features li:hover {
+    color: #ff7a00;
+    transform: translateX(5px);
 }
 
 .intro-features i {
     color: #25d366;
-    margin-right: 8px;
 }
 
+/* Buttons */
 .cta-btn {
-    text-align: center;
     padding: 12px 1rem;
     font-size: 1rem;
-    border-radius: 20px;
-    width: 50%;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
     font-weight: 600;
-    letter-spacing: 1px;
     background: #0a7330;
     color: #fff;
-    transition: 0.3s ease;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+    background: linear-gradient(90deg, #0a7330, #25d366);
+    transform: scale(1.05);
+}
+
+.cta-btn i {
+    transition: transform 0.3s ease;
+}
+
+.cta-btn:hover i {
+    transform: translateX(5px);
 }
 
 .cta-btn.blink {
     animation: blinkPulse 1.2s infinite;
 }
 
-.cta-btn:hover {
-    background: #30e174;
+.btn-blue {
+    background: #0b1d3a; /* dark blue */
 }
 
-.cta-btn i {
-    margin-left: 8px;
+.btn-blue:hover {
+    background: linear-gradient(90deg, #0b1d3a, #1e3a8a);
+    box-shadow: 0 8px 20px rgba(11, 29, 58, 0.4);
 }
 
+/* Floating intro image */
+.intro-image img {
+    width: 100%;
+    border-radius: 16px;
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Flex for forms */
 .form-introductions {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-top: 20px;
+    width: 60%;
 }
 
 /* ========================================
-   Blink Effect
+   Animations
 ======================================== */
 @keyframes blinkPulse {
-    0% {
-        opacity: 1;
-        transform: scale(1);
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.03); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Fade-in effect for text */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+.fade-in.delay-1 { animation-delay: 0.3s; }
+.fade-in.delay-2 { animation-delay: 0.6s; }
+.fade-in.delay-3 { animation-delay: 0.9s; }
+
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================
+   Responsive
+======================================== */
+@media (max-width: 768px) {
+    .intro-card.container {
+        grid-template-columns: 1fr;
+        text-align: center;
     }
 
-    50% {
-        opacity: 0.6;
-        transform: scale(1.03);
+    .form-introductions {
+        width: 100%;
+        justify-content: center;
     }
 
-    100% {
-        opacity: 1;
-        transform: scale(1);
+    .intro-image img {
+        max-width: 80%;
+        margin: 0 auto;
     }
 }
+
 
 /* ========================================
    Booking Process Section
