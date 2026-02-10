@@ -50,30 +50,67 @@ Kami akan menghubungi anda untuk pengesahan tempahan secepat mungkin.
     });
 }
 
+document.addEventListener("DOMContentLoaded", () => {
 
-// ==============================
-// CAR FILTER
-// ==============================
+    // ==============================
+    // CAR CATEGORY FILTER
+    // ==============================
+    const filterItems = document.querySelectorAll(".filter-menu li");
+    const rentalBoxes = document.querySelectorAll(".rental-box");
 
-const filters = document.querySelectorAll(".filter-menu li");
-const cars = document.querySelectorAll(".rental-box");
+    if (!filterItems.length || !rentalBoxes.length) return;
 
-if (filters.length && cars.length) {
-    filters.forEach(filter => {
-        filter.addEventListener("click", () => {
+    filterItems.forEach(item => {
+        item.addEventListener("click", () => {
+
             // Active state
-            filters.forEach(f => f.classList.remove("active"));
-            filter.classList.add("active");
+            filterItems.forEach(i => i.classList.remove("active"));
+            item.classList.add("active");
 
-            const type = filter.dataset.filter;
+            const filter = item.getAttribute("data-filter");
 
-            cars.forEach(car => {
-                if (type === "all" || car.dataset.category.toLowerCase() === type.toLowerCase()){
-                    car.style.display = "block";
+            rentalBoxes.forEach(box => {
+                const category = box.getAttribute("data-category");
+
+                if (filter === "all" || category === filter) {
+                    box.style.display = "block";
                 } else {
-                    car.style.display = "none";
+                    box.style.display = "none";
                 }
             });
         });
     });
-}
+
+});
+
+
+
+// ==============================
+// CAR FILTER (FIXED)
+// ==============================
+// const filterItems = document.querySelectorAll(".filter-menu li");
+// const rentalBoxes = document.querySelectorAll(".rental-box");
+
+// if (filterItems.length && rentalBoxes.length) {
+//     filterItems.forEach(item => {
+//         item.addEventListener("click", () => {
+//             // Remove active from all
+//             filterItems.forEach(i => i.classList.remove("active"));
+//             item.classList.add("active");
+
+//             const filter = item.getAttribute("data-filter");
+
+//             rentalBoxes.forEach(box => {
+//                 const category = box.getAttribute("data-category");
+
+//                 if (filter === "all" || category === filter) {
+//                     box.style.display = "block";
+//                 } else {
+//                     box.style.display = "none";
+//                 }
+//             });
+//         });
+//     });
+// }
+
+

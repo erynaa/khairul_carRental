@@ -121,6 +121,21 @@ header {
 /* ========================================
 Rental Section
 ======================================== */
+.rentals .heading {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.heading h2 {
+    font-family: var(--poppins-font);
+}
+
+.heading p {
+    max-width: 550px;
+    font-size: 0.9rem;
+    margin: 1rem auto;
+}
+
 .rentals-layout {
     display: grid;
     grid-template-columns: 220px 1fr;
@@ -142,29 +157,37 @@ Rental Section
 }
 
 .filter-menu ul {
-    list-style: none;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .filter-menu li {
-    padding: 10px 12px;
-    margin-bottom: 8px;
-    cursor: pointer;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: background 0.3s, color 0.3s;
+    padding: 12px 16px;
+    border-radius: 999px;
+    /* pill shape */
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.25s ease;
 }
 
 /* Hover only for non-active items */
 .filter-menu li:not(.active):hover {
-    background: #e6f4ec;  /* light green */
+    transform: translateX(4px);
+    background: #f0fdf4;
     color: #0a7330;
 }
 
 /* Active item always dark green */
 .filter-menu li.active {
-    background: #0a7330;
+    background: linear-gradient(135deg, #0a7330, #0fc15c);
     color: #fff;
+    border-color: transparent;
+    box-shadow: 0 8px 20px rgba(10, 115, 48, 0.25);
 }
 
 .rentals-content {
@@ -174,21 +197,158 @@ Rental Section
 }
 
 .rental-box {
-    padding: 10px;
-    border-radius: 10px;
-    background: #fff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    background-image: url("../images/Background/Car_bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    padding: 20px;
+    border-radius: 14px;
+}
+
+.rental-box.hidden {
+    opacity: 0;
+    transform: scale(0.96);
+    pointer-events: none;
 }
 
 .rental-box:hover {
     transform: translateY(-6px);
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.12),
+        0 0 0 2px rgba(10, 115, 48, 0.08);
 }
 
 .rental-box img {
-    width: 100%;
+    width: 70%;
     object-fit: contain;
-    margin-bottom: 12px;
+    margin: 0 auto 12px;
+}
+
+.rental-top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.category-badge {
+    font-size: 0.90rem;
+    font-weight: 600;
+    padding: 6px 20px;
+    border-radius: 999px;
+    background: rgba(10, 115, 48, 0.1);
+    color: #0a7330;
+}
+
+.rental-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 14px;
+}
+
+.car-logo {
+    width: 100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.car-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.divider-line {
+    width: 95%;
+    /* how long the line is */
+    border: 0;
+    /* remove default border */
+    height: 2px;
+    /* line thickness */
+    background: #ccc;
+    /* line color */
+    margin: 10px auto;
+    /* spacing above and below, centered */
+}
+
+.rental-info h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.rental-info p {
+    font-size: 0.8rem;
+    color: var(--text-alter-color);
+}
+
+.rental-specs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.spec {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #f1f5f9;
+    color: #0b1d3a;
+    position: relative;
+}
+
+.spec i {
+    font-size: 0.85rem;
+    color: #0a7330;
+}
+
+/* Vertical line between specs */
+.rental-specs .spec:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    /* space outside the pill */
+    transform: translateY(-50%);
+    width: 2px;
+    /* line thickness */
+    height: 50%;
+    /* line height */
+    background-color: #ccc;
+}
+
+.rental-price {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 6px;
+    margin: 10px 0 14px;
+    margin-bottom: 30px;
+}
+
+.rental-price .price {
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: #ff6600;
+}
+
+.rental-price .per {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-alter-color);
 }
 
 .rental-btn {
@@ -203,32 +363,6 @@ Rental Section
     border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
-}
-
-.rentals .heading {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.heading h2 {
-    font-family: var(--poppins-font);
-}
-
-.heading p {
-    max-width: 550px;
-    font-size: 0.9rem;
-    margin: 1rem auto;
-}
-
-.rental-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.rental-top h3 {
-    font-size: 1rem;
-    font-family: var(--poppins-font);
 }
 
 .price-btn {
@@ -269,9 +403,58 @@ Rental Section
         width: 3.5rem;
     }
 
+    .filter-menu li{
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    .category-badge {
+        font-size: 0.8rem;
+    }
+
+    .car-logo img {
+        width: 60%;
+    }
+
+    .rental-specs {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        margin-bottom: 14px;
+    }
+
+    .spec {
+        justify-content: center;
+        font-size: 0.75rem;
+        padding: 6px 4px;
+        border-radius: 8px;
+    }
+
+    /* Remove vertical divider on mobile */
+    .rental-specs .spec::after {
+        display: none;
+    }
+
+    .spec i {
+        font-size: 0.75rem;
+    }
+
+    .rental-price .price {
+        font-size: 1.0rem;
+    }
+
+    .rental-price .per {
+        font-size: 0.7rem;
+    }
+
+    .rental-box {
+        padding: 13px;
+    }
+
     .rentals-content {
         grid-template-columns: repeat(2, 1fr);
     }
+
 }
 
 @media screen and (max-width: 430px) {
