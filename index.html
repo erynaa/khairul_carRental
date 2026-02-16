@@ -16,21 +16,26 @@
 <body>
     <!-- Header -->
     <header>
-        <!-- Nav -->
-        <div class="nav container">
-            <!-- Logo -->
-            <div class="nav-logo">
-                <a href="index.html">
-                    <img src="images/Mini_Logo.png" alt="Khairul Car Rental Logo">
-                </a>
-            </div>
-            <!-- navbar -->
-            <div class="navbar">
-                <a href="index.html" class="nav-link">Laman Utama</a>
-                <a href="#trending" class="nav-link">Kenderaan Popular</a>
-                <a href="form/cars.html" class="nav-link">Senarai Kenderaan</a>
-                <a href="#reviews" class="nav-link">Testimoni</a>
-                <a href="#information" class="nav-link">Hubungi Kami</a>
+        <div class="nav">
+            <!-- Nav -->
+            <div class="container nav-inner">
+                <!-- Logo -->
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <img src="images/Mini_Logo.png" alt="Khairul Car Rental Logo">
+                    </a>
+                </div>
+                <!-- navbar -->
+                <div class="navbar" id="navbar">
+                    <a href="index.html" class="nav-link">Laman Utama</a>
+                    <a href="#trending" class="nav-link">Kenderaan Popular</a>
+                    <a href="form/cars.html" class="nav-link">Senarai Kenderaan</a>
+                    <a href="#customer-feedback" class="nav-link">Testimoni</a>
+                    <a href="#information" class="nav-link">Hubungi Kami</a>
+                </div>
+                <div class="menu-toggle" id="menu-toggle">
+                    <i class="bx bx-menu"></i>
+                </div>
             </div>
         </div>
     </header>
@@ -127,6 +132,29 @@
         </div>
     </section>
 
+    <!-- Customer Feedback Section -->
+    <section class="customer-feedback" id="customer-feedback">
+        <div class="container feedback-box">
+            <h2>Maklum Balas Pelanggan</h2>
+            <p>
+                Terima kasih tuan/puan kerana menggunakan perkhidmatan kereta sewa <strong>Khairul Rent A Car</strong>
+            </p>
+            <p>
+                Kami amat menghargai sokongan anda. Mohon jasa baik tuan/puan untuk memberikan maklum balas melalui
+                pautan di bawah:
+            </p>
+            <div class="feedback-links">
+                <a href="https://www.facebook.com/KhairulRentaCar" target="_blank" class="fb-review">
+                    <i class="fa-brands fa-facebook"></i> Facebook Review
+                </a>
+
+                <a href="https://maps.app.goo.gl/qRJ6jt7RQLDRVDwB8" target="_blank" class="google-review">
+                    <i class="fa-brands fa-google"></i> Google Review
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Reviews -->
     <section class="reviews" id="reviews">
         <!-- Elfsight Google Reviews | Untitled Google Reviews -->
@@ -136,22 +164,39 @@
 
     <!-- Company Info -->
     <section class="information" id="information">
-        <div class="container">
-            <div class="heading">
+        <div class="container contact-wrapper">
+
+            <!-- LEFT SIDE -->
+            <div class="contact-info">
                 <h2>Hubungi Kami</h2>
+                <p>Kami sedia membantu anda untuk tempahan & pertanyaan.</p>
+
+                <div class="contact-details">
+                    <p><i class="fa-solid fa-phone"></i> +60 11-11976971</p>
+                    <p><i class="fa-solid fa-envelope"></i> khairulvtwin@gmail.com </p>
+                    <p><i class="fa-solid fa-location-dot"></i> Johor Bahru, Malaysia</p>
+                </div>
             </div>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/KhairulRentaCar" target="_blank" class="fb-icon">
-                    <i class="fa-brands fa-facebook"></i>
-                </a>
-                <a href="https://www.tiktok.com/@khairulrentacar?_r=1&_t=ZS-92onVZVw7Wb" target="_blank"
-                    class="tiktok-icon">
-                    <i class="fa-brands fa-tiktok"></i>
-                </a>
-                <a href="https://wa.me/601111976971" target="_blank" class="whatsapp-icon">
-                    <i class="fa-brands fa-whatsapp"></i>
-                </a>
+
+            <!-- RIGHT SIDE -->
+            <div class="contact-social">
+                <h3>Ikuti Kami</h3>
+
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/KhairulRentaCar" target="_blank" class="fb-icon">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@khairulrentacar?_r=1&_t=ZS-92onVZVw7Wb" target="_blank"
+                        class="tiktok-icon">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a href="https://wa.me/601111976971" target="_blank" class="whatsapp-icon">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+
             </div>
+
         </div>
     </section>
 

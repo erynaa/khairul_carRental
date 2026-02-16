@@ -50,6 +50,28 @@ Kami akan menghubungi anda untuk pengesahan tempahan secepat mungkin.
     });
 }
 
+// ==============================
+// Menu-Toggle
+// ============================== 
+const menuToggle = document.getElementById("menu-toggle");
+const navbar = document.getElementById("navbar");
+const navLinks = document.querySelectorAll(".nav-link");
+
+// Toggle menu open/close
+menuToggle.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+});
+
+// Close menu when a link is clicked
+navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        navbar.classList.remove("active");
+    });
+});
+
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
 
     // ==============================

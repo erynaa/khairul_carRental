@@ -64,12 +64,18 @@ header {
 }
 
 .nav {
+    width: 100%;
+    background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
+    border-bottom: 2px solid #c9a227;
+}
+
+.nav-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: var(--text-color);
-    padding: 12px 40px;
+    padding: 8px 40px;
 }
+
 
 .nav-logo img {
     width: 4rem;
@@ -96,7 +102,7 @@ header {
     color: var(--bg-color);
 }
 
-.nav-icons {
+/* .nav-icons {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -116,6 +122,13 @@ header {
 
 .nav-icons .user-icon:hover {
     background: var(--second-color);
+} */
+
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    color: #fff;
+    cursor: pointer;
 }
 
 /* ========================================
@@ -127,16 +140,6 @@ header {
     position: relative;
     overflow: hidden;
 }
-
-/* Optional subtle background car image */
-/* .intro::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: url('../images/LogoRental.png') center/cover no-repeat;
-    opacity: 0.08;
-    z-index: 0;
-} */
 
 .intro-card.container {
     display: grid;
@@ -223,7 +226,8 @@ header {
 }
 
 .btn-blue {
-    background: #0b1d3a; /* dark blue */
+    background: #0b1d3a;
+    /* dark blue */
 }
 
 .btn-blue:hover {
@@ -251,13 +255,29 @@ header {
    Animations
 ======================================== */
 @keyframes blinkPulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.6; transform: scale(1.03); }
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.03);
+    }
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 /* Fade-in effect for text */
@@ -267,12 +287,23 @@ header {
     animation: fadeInUp 1s forwards;
 }
 
-.fade-in.delay-1 { animation-delay: 0.3s; }
-.fade-in.delay-2 { animation-delay: 0.6s; }
-.fade-in.delay-3 { animation-delay: 0.9s; }
+.fade-in.delay-1 {
+    animation-delay: 0.3s;
+}
+
+.fade-in.delay-2 {
+    animation-delay: 0.6s;
+}
+
+.fade-in.delay-3 {
+    animation-delay: 0.9s;
+}
 
 @keyframes fadeInUp {
-    to { opacity: 1; transform: translateY(0); }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ========================================
@@ -409,14 +440,152 @@ header {
 }
 
 /* ========================================
+   Customer Feedback Section
+======================================== */
+.customer-feedback {
+    position: relative;
+    background: url('../images/Background/Review_bg.jpeg') center/cover no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding: 4rem 1rem;
+    overflow: hidden;
+}
+
+.customer-feedback::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('../images/Background/Review_bg.jpeg') center/cover no-repeat;
+    background-size: cover;
+    filter: blur(4px) brightness(0.5);
+    z-index: 0;
+}
+
+.customer-feedback .feedback-box {
+    position: relative;
+    z-index: 1;
+}
+
+.feedback-box {
+    max-width: 900px;
+    text-align: center;
+}
+
+.feedback-box h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.feedback-box p {
+    margin-bottom: 1rem;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.feedback-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.feedback-links a {
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease;
+    color: #fff;
+}
+
+.fb-review {
+    background: #1877f2;
+}
+
+.fb-review:hover {
+    background: #145dbf;
+}
+
+.google-review {
+    background: #ea4335;
+}
+
+.google-review:hover {
+    background: #c5221f;
+}
+
+.feedback-sign {
+    margin-top: 2rem;
+    font-size: 0.95rem;
+}
+
+/* ========================================
    Social Icons
 ======================================== */
+/* Contact Section Layout */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    padding: 2px;
+}
+
+.contact-info {
+    border-right: 1px solid #eee;
+    padding-right: 2rem;
+}
+
+.contact-info h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+    color: #e5e5e5;
+}
+
+.contact-details p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    color: #e5e5e5;
+}
+
+.contact-social {
+    text-align: center;
+}
+
+.contact-social h3 {
+    margin-bottom: 1rem;
+}
+
+.contact-btn {
+    margin-top: 1.5rem;
+    display: inline-block;
+}
+
 .information .heading {
     text-align: center;
 }
 
 .information .heading h2 {
     font-size: 1.5rem;
+}
+
+.information {
+    background: linear-gradient(135deg,
+            #0f172a 0%,
+            #1e3a8a 50%,
+            #0b1d3a 100%);
+    color: #fff;
+    padding: 60px 0;
+
+    position: relative;
+    overflow: hidden;
 }
 
 .social-icons {
@@ -427,16 +596,17 @@ header {
 }
 
 .social-icons a {
+    position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 55px;
-    height: 65px;
+    height: 55px;
     background: #fff;
-    border-radius: 30%;
+    border-radius: 50%;
     color: #1877f2;
     font-size: 28px;
-    color: #1877f2;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
@@ -507,6 +677,7 @@ header {
     display: flex;
     justify-content: center;
     margin-top: 50px;
+    margin-bottom: 2rem;
 }
 
 .others-car-btn {
@@ -733,14 +904,27 @@ header {
     }
 
     .navbar {
-        /* gap: 1rem; */
+        position: absolute;
+        top: 60px;
+        right: 0;
         width: 100%;
-        padding: 5px 18px;
+        background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
+        border-bottom: 2px solid #c9a227;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+        padding: 18px 0;
+
+        display: none;
+    }
+
+    .navbar.active {
+        display: flex;
     }
 
     .nav-link {
-        font-size: 0.80rem;
-        gap: 0.5rem;
+        font-size: 15px;
+        color: #fff;
     }
 
     .nav {
@@ -749,7 +933,11 @@ header {
     }
 
     .nav-logo img {
-        width: 3.5rem;
+        width: 3rem;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 
     .intro-text h1 {
@@ -781,6 +969,20 @@ header {
 
     .trend-box h4 {
         font-size: 0.95rem;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .contact-info {
+        border-right: none;
+        padding-right: 0;
+    }
+
+    .contact-details p {
+        justify-content: center;
     }
 
     .social-icons a {
