@@ -103,6 +103,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // ==============================
+    // CAR FILTER (FIXED)
+    // ==============================
+    const params = new URLSearchParams(window.location.search);
+    const selectedType = params.get("type")
+
+    if (selectedType) {
+        filterItems.forEach(item => {
+            if (item.getAttribute("data-filter") === selectedType) {
+                item.click();
+            }
+        });
+    }
+
 });
 
 
