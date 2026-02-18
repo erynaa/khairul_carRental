@@ -997,9 +997,14 @@ header {
     .intro {
         padding: 7rem 20px;
         background-size: 95%;
-        background-position: 60% center;
+        background-position: center;
     }
-    
+
+    .intro-card.container {
+        justify-content: center;
+        /* text-align: center; */
+    }
+
     .intro-text {
         max-width: 70%;
         padding: 25px;
