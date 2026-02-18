@@ -115,19 +115,32 @@ header {
 ======================================== */
 .intro {
     background-color: #f8f9fb;
-    /* background: linear-gradient(to right, #f8f9fb, #e0f7fa); */
-    padding: 80px 15px;
+    padding: 6rem 10px;
     position: relative;
     overflow: hidden;
+
+    background: url("../images/Background/Intro_Bg2.png") no-repeat;
+    background-size: 65%;
+    background-position: 90% center;
 }
 
 .intro-card.container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    /* gap: 2rem; */
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.intro-text {
+    flex: 1;
+    position: relative;
+    max-width: 550px;
+    background: rgba(255,255,255,0.8);
+    padding: 20px 30px;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    color: #fff;
 }
 
 .intro-text h1 span {
@@ -135,7 +148,7 @@ header {
 }
 
 .intro-text h1 {
-    margin: 2rem 0;
+    margin: 1rem 0;
     font-size: 3rem;
     line-height: 1.1;
     color: #0b1d3a;
@@ -171,12 +184,14 @@ header {
 }
 
 .intro-features i {
-    color: #25d366;
+    background: linear-gradient(45deg, #25d366, #0a7330);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* Buttons */
 .cta-btn {
-    padding: 16px 2rem;
+    padding: 13px 2rem;
     font-size: 1rem;
     border-radius: 8px;
     text-decoration: none;
@@ -187,6 +202,8 @@ header {
     color: #fff;
     gap: 10px;
     transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 .cta-btn:hover {
@@ -217,16 +234,13 @@ header {
 }
 
 .intro-image {
-    justify-self: end;
-    /* keeps it in the right grid cell */
+    flex: 1;
 }
 
-/* Floating intro image */
 .intro-image img {
-    width: 110%;
-    margin-top: 15px;
-    transform: translateX(-60px);
-    /* animation: float 4s ease-in-out infinite; */
+    width: 100%;
+    border-radius: 20px;
+    padding: 0;
 }
 
 /* Flex for forms */
@@ -235,7 +249,7 @@ header {
     flex-direction: column;
     gap: 10px;
     margin-top: 20px;
-    width: 50%;
+    width: 60%;
 }
 
 /* ========================================
@@ -882,28 +896,6 @@ header {
 
 /* Mobile: up to 768px */
 @media (max-width: 768px) {
-
-    .form-introductions {
-        width: 80%;
-    }
-
-    .intro-text h1 {
-        font-size: 2rem;
-    }
-
-    .intro-desc {
-        font-size: 1rem;
-    }
-
-    .intro-image img {
-        margin: 0;
-        transform: translateX(0);
-    }
-
-    .cta-btn {
-        padding: 15px 30px;
-    }
-
     .navbar {
         position: absolute;
         top: 60px;
@@ -1000,6 +992,33 @@ header {
     .booking-card {
         padding: 1.5rem;
     }
+
+    /* Intro */
+    .intro {
+        padding: 7rem 20px;
+        background-size: 95%;
+        background-position: 60% center;
+    }
+    
+    .intro-text {
+        max-width: 70%;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: none;
+        color: #fff;
+    }
+
+    .intro-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .form-introductions {
+        width: 100%;
+    }
+
+    .cta-btn {
+        max-width: 280px;
+    }
 }
 
 /* Mobile Phones: up to 430px */
@@ -1052,4 +1071,5 @@ header {
     .form-row {
         flex-direction: column;
     }
+
 }
