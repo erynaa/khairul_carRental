@@ -16,8 +16,13 @@ if (form) {
         e.preventDefault();
 
         const name = document.getElementById("name").value;
-        const location = document.getElementById("location").value;
+        const ic = document.getElementById("ic").value;
+        const phone = document.getElementById("phone").value;
+        const alamat = document.getElementById("alamat").value;
+        const destinasi = document.getElementById("destinasi").value;
+        const pax = document.getElementById("pax").value;
         const car = document.getElementById("car").value;
+        const carType = document.getElementById("carType").value;
         const pickup = document.getElementById("pickup").value;
         const pickupTime = document.getElementById("time_pickup").value;
         const returnDate = document.getElementById("return").value;
@@ -29,14 +34,19 @@ if (form) {
 Khairul Rent A Car
 * Sila menyemak butiran sebelum melakukan tempahan.
 
-Nama: ${name}
-Lokasi: ${location}
-Kenderaan: ${car}
+Nama Penyewa: ${name}
+No K/P Penyewa: ${ic}
+No H/Phone Penyewa: ${phone}
+Alamat Penyewa: ${alamat}
+Destinasi Sewaan: ${destinasi}
+Jumlah Penumpang: ${pax}
+Jenis Kenderaan: ${car}
+Pilih Kenderaan: ${carType}
 Tarikh Pick Up: ${pickup}
 Masa Pick Up: ${pickupTime}
 Tarikh Pulang: ${returnDate}
 Masa Pulang: ${returnTime}
-Jumlah Hari: ${totalDate}
+Jumlah Hari Sewaan: ${totalDate}
 Jenis Perkhidmatan: ${serviceType}
 
 Terima kasih kerana menghubungi Khairul Rent A Car. 
@@ -95,10 +105,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 const category = box.getAttribute("data-category");
 
                 if (filter === "all" || category === filter) {
-                    box.style.display = "block";
+                    box.style.display = "flex";
                 } else {
                     box.style.display = "none";
                 }
+            });
+
+            // Auto Scroll Up Pages
+            document.querySelector("#rentals").scrollIntoView({
+                behavior: "smooth"
             });
         });
     });

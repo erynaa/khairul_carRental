@@ -740,6 +740,14 @@ header {
     color: #fff;
 }
 
+.booking p {
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    color: #fff;
+}
+
 .booking-bg {
     position: relative;
     min-height: 100vh;
@@ -825,6 +833,7 @@ header {
 .radio-group {
     display: flex;
     gap: 20px;
+    margin-bottom: 2rem;
 }
 
 .radio-option {

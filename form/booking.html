@@ -22,18 +22,30 @@
                     Kota Tinggi | Johor Bahru
                 </h1>
 
-                <input type="text" id="name" placeholder="Nama Penuh" required />
-                <input type="text" id="location" placeholder="Lokasi" required />
+                <p>
+                    Sila isi maklumat dibawah untuk mendapatkan sebut harga
+                    secara PERCUMA.
+                </p>
+
+                <input type="text" id="name" placeholder="Nama Penuh Penyewa" required />
+                <input type="text" id="ic" placeholder="No K/P Penyewa" required />
+                <input type="text" id="phone" placeholder="No H/Phone Penyewa" required />
+                <input type="text" id="alamat" placeholder="Alamat Penyewa" required />
+                <input type="text" id="destinasi" placeholder="Destinasi Sewaan" required />
+                <input type="text" id="pax" placeholder="Jumlah Penumpang" required />
 
                 <select id="car" required>
-                    <option value="">Pilih Kenderaan</option>
-                    <option value="Perodua Bezza">Perodua Bezza</option>
-                    <option value="Perodua Axia">Perodua Axia</option>
-                    <option value="Perodua Alza">Perodua Alza</option>
-                    <option value="Proton Saga">Proton Saga</option>
-                    <option value="Hyundai Starex">Hyundai Starex</option>
-                    <option value="Mitsubishi Xpander">Mitsubishi Xpander</option>
+                    <option value="">Jenis Kenderaan</option>
+                    <option value="sedan">Sedan</option>
+                    <option value="mpv">MPV</option>
+                    <option value="suv">SUV</option>
+                    <option value="hatchback">Hatchback</option>
+                    <option value="fourWheel">4x4</option>
+                    <option value="lori">Lori 1-5Tan</option>
+                    <option value="jcb">JCB</option>
                 </select>
+
+                <input type="text" id="carType" placeholder="Pilih Kenderaan (Myvi/Bezza/Alphard)" required />
 
                 <div class="form-row">
                     <div class="form-group">
@@ -57,7 +69,7 @@
                     </div>
                 </div>
 
-                <input type="text" id="total_date" placeholder="Jumlah Hari" required />
+                <input type="text" id="total_date" placeholder="Jumlah Hari Sewaan" required />
                 
                 <label>Jenis Perkhidmatan</label>
                 <div class="radio-group">
@@ -69,7 +81,15 @@
                         <input type="radio" name="service_type" value="Delivery" required />
                         Delivery
                     </label>
+                    <label class="radio-option">
+                        <input type="radio" name="service_type" value="RentwDriver" required />
+                        Rent with Driver (optional)
+                    </label>
                 </div>
+
+                <p>
+                    Pihak Kami akan membalas pesanan secepat mungkin untuk menyemak kereta yang tersedia terlebih dahulu.
+                </p>
 
                 <div class="form-actions">
                     <button type="submit" class="submit-btn">
