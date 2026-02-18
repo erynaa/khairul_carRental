@@ -942,91 +942,136 @@ header {
         display: block;
     }
 
-    /* Booking Process */
-    .booking-process {
-        padding: 1rem 8rem 2rem;
+    /* Intro */
+    .intro {
+        padding: 8rem 10px 8rem;
+        background-size: 180%;
+        background-position: center;
     }
 
-    .booking-process h2 {
-        font-size: 1.6rem;
-    }
-
-    .process-steps li {
-        font-size: 0.95rem;
-        padding: 1rem 1.2rem 1rem 3.5rem;
-    }
-
-    .contact-wrapper {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .contact-info {
-        border-right: none;
-        padding-right: 0;
-    }
-
-    .contact-details p {
+    .intro-card.container {
         justify-content: center;
     }
 
-    .social-icons a {
-        width: 50px;
+    .intro-desc {
+        line-height: 1.3;
+        margin: 20px 0;
+    }
+
+    .intro-text {
+        max-width: 90%;
+    }
+
+    .intro-text h1 {
+        font-size: 1.5rem;
+        margin: 2px 0;
+    }
+
+    .intro-text p {
+        font-size: 1.2rem;
+    }
+
+    .intro-features li {
+        font-size: 1rem;
+    }
+
+    .cta-btn {
+        max-width: 300px;
+        font-size: 1rem;
+        justify-content: center;
+    }
+
+    .form-introductions {
+        width: 80%;
+    }
+
+    /* Booking Process */
+    .booking-process {
+        padding: 6px 2rem 1rem;
+    }
+
+    .booking-process h2 {
+        font-size: 1.5rem;
+    }
+
+    .process-steps li {
+        font-size: 1rem;
+        padding: 1rem 1.2rem 1rem 3.5rem;
+    }
+
+    .process-note p {
+        font-size: 0.80rem;
+    }
+
+    /* Car Selection */
+    .car-category {
+        padding: 3rem 2rem 4rem;
+    }
+
+    .car-category h2 {
+        font-size: 1.5rem;
+    }
+
+    .category-buttons a {
+        font-size: 1rem;
+    }
+
+    /* Customer Feedback */
+    .customer-feedback {
+        padding: 3rem 2rem 2rem;
+    }
+
+    .customer-feedback h2 {
+        font-size: 1.5rem;
+    }
+
+    .customer-feedback p {
+        font-size: 1rem;
+    }
+
+    .feedback-links a {
+        font-size: 1rem;
+    }
+
+    /* Contact */
+    .contact-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+    }
+
+    .contact-wrapper { 
+        grid-template-columns: 1fr; 
+        text-align: center; 
+    }
+
+    .contact-info { 
+        border-right: none; 
+        padding-right: 0;
+    }
+
+    .contact-social h3 {
+        font-size: 1.5rem;
+    }
+
+    .contact-details p { 
+        justify-content: center; 
+    }
+
+    .social-icons a{
+        width: 50px; 
         height: 50px;
-        font-size: 24px;
     }
 
     .social-icons {
         gap: 15px;
     }
 
-    .others-car-btn {
-        font-size: 0.9rem;
-        padding: 10px 20px;
-    }
-
-    .reviews {
-        padding: 2rem 1rem;
-    }
-
-    .booking.container {
-        padding: 1.5rem;
-    }
-
-    .booking-card {
-        padding: 1.5rem;
-    }
-
-    /* Intro */
-    .intro {
-        background-size: 150%;
-        background-position: center;
-
-    }
-
-    .intro-card.container {
-        justify-content: center;
-        /* text-align: center; */
-    }
-
-    .intro-text {
-        max-width: 70%;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: none;
-        color: #fff;
-    }
-
-    .intro-text h1 {
-        font-size: 1.8rem;
-    }
-
-    .form-introductions {
-        width: 100%;
-    }
-
-    .cta-btn {
-        max-width: 250px;
+    .mobile-break {
+        display: block;
+        margin-top: 5px;
     }
 }
 
@@ -1054,8 +1099,8 @@ header {
 
     /* Intro */
     .intro {
-        padding: 6rem 10px 2rem 10px;
-        background-size: 120%;
+        padding: 6rem 9px 5rem;
+        background-size: 160%;
     }
 
     .intro-desc {
@@ -1084,6 +1129,10 @@ header {
         max-width: 300px;
         font-size: 13px;
         justify-content: center;
+    }
+
+    .form-introductions {
+        width: 90%;
     }
 
     /* Booking Process */
