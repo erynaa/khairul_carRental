@@ -996,8 +996,9 @@ header {
     /* Intro */
     .intro {
         padding: 7rem 20px;
-        background-size: 95%;
+        background-size: 150%;
         background-position: center;
+
     }
 
     .intro-card.container {
@@ -1028,27 +1029,6 @@ header {
 
 /* Mobile Phones: up to 430px */
 @media (max-width: 430px) {
-    .intro-text h1 {
-        font-size: 1.8rem;
-    }
-
-    .intro-text h1 span {
-        font-size: 1.8rem;
-    }
-
-    .intro-desc {
-        font-size: 0.9rem;
-    }
-
-    .intro-features li {
-        font-size: 0.85rem;
-    }
-
-    .cta-btn {
-        font-size: 0.85rem;
-        padding: 10px 16px;
-    }
-
     .navbar a {
         font-size: 0.7rem;
     }
