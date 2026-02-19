@@ -29,6 +29,7 @@ if (form) {
         const returnTime = document.getElementById("time_return").value;
         const totalDate = document.getElementById("total_date").value;
         const serviceType = document.querySelector('input[name="service_type"]:checked').value;
+        const promoCode = document.getElementById("promoCode").value;
 
         const message = `
 Khairul Rent A Car
@@ -48,6 +49,7 @@ Tarikh Pulang: ${returnDate}
 Masa Pulang: ${returnTime}
 Jumlah Hari Sewaan: ${totalDate}
 Jenis Perkhidmatan: ${serviceType}
+Promo Code: ${promoCode}
 
 Terima kasih kerana menghubungi Khairul Rent A Car. 
 Kami akan menghubungi anda untuk pengesahan tempahan secepat mungkin.
@@ -67,22 +69,50 @@ const menuToggle = document.getElementById("menu-toggle");
 const navbar = document.getElementById("navbar");
 const navLinks = document.querySelectorAll(".nav-link");
 
-// Toggle menu open/close
-menuToggle.addEventListener("click", () => {
-    navbar.classList.toggle("active");
-});
-
-// Close menu when a link is clicked
-navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-        navbar.classList.remove("active");
+if (menuToggle && navbar) {
+    menuToggle.addEventListener("click", () => {
+        navbar.classList.toggle("active");
     });
-});
 
-
-
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            navbar.classList.remove("active");
+        });
+    });
+}
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    // ==============================
+    // CAR TYPE DROPDOWN
+    // ==============================
+    const carCategory = document.getElementById("car");
+    const carTypeSelect = document.getElementById("carType");
+
+    if (carCategory && carTypeSelect) {
+        const carData = {
+            hatchback: ["Axia", "Myvi", "Toyota Yaris"],
+            sedan: ["Saga", "Bezza", "Toyota Vios"],
+            mpv: ["Alza", "Exora", "Sienta", "XPander", "Starex", "Alphard", "Toyota Hiace"],
+            jentera: ["Hilux", "Lori 1-5 tan", "JCB", "Skylift"]
+        };
+
+        carCategory.addEventListener("change", function () {
+            const selectedCategory = this.value;
+
+            //Reset Options
+            carTypeSelect.innerHTML = '<option value="">Pilih Kenderaan</option>';
+
+            if (carData[selectedCategory]) {
+                carData[selectedCategory].forEach(car => {
+                    const option = document.createElement("option");
+                    option.value = car;
+                    option.textContent = car;
+                    carTypeSelect.appendChild(option);
+                });
+            }
+        });
+    }
 
     // ==============================
     // CAR CATEGORY FILTER
@@ -134,34 +164,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-
-
-// ==============================
-// CAR FILTER (FIXED)
-// ==============================
-// const filterItems = document.querySelectorAll(".filter-menu li");
-// const rentalBoxes = document.querySelectorAll(".rental-box");
-
-// if (filterItems.length && rentalBoxes.length) {
-//     filterItems.forEach(item => {
-//         item.addEventListener("click", () => {
-//             // Remove active from all
-//             filterItems.forEach(i => i.classList.remove("active"));
-//             item.classList.add("active");
-
-//             const filter = item.getAttribute("data-filter");
-
-//             rentalBoxes.forEach(box => {
-//                 const category = box.getAttribute("data-category");
-
-//                 if (filter === "all" || category === filter) {
-//                     box.style.display = "block";
-//                 } else {
-//                     box.style.display = "none";
-//                 }
-//             });
-//         });
-//     });
-// }
 
 
