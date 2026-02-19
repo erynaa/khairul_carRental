@@ -455,7 +455,7 @@ header {
     inset: 0;
     background: url('../images/Background/Review_bg.jpeg') center/cover no-repeat;
     background-size: cover;
-    filter: blur(1px) brightness(0.5);
+    filter: blur(2px) brightness(0.5);
     z-index: 0;
 }
 
