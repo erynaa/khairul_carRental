@@ -103,6 +103,14 @@ header {
     color: var(--bg-color);
 }
 
+.menu-title {
+    color: #fff;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.88rem;
+    padding: 0 70px;
+}
+
 .menu-toggle {
     display: none;
     font-size: 26px;
@@ -945,6 +953,10 @@ header {
 
     .nav-logo img {
         width: 3rem;
+    }
+
+    .menu-title {
+        padding: 0;
     }
 
     .menu-toggle {
