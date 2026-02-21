@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
             hatchback: ["Axia", "Myvi", "Toyota Yaris", "Honda City"],
             sedan: ["Saga", "Bezza", "Toyota Vios", "Nissan Almera"],
             mpv: ["Alza", "Exora", "Sienta", "XPander", "Starex", "Alphard", "Toyota Hiace"],
+            suv: ["Proton X50", "Proton X70"],
             jentera: ["Hilux", "Lori 1-5 tan", "JCB", "Skylift"]
         };
 
