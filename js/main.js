@@ -91,8 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (carCategory && carTypeSelect) {
         const carData = {
-            hatchback: ["Axia", "Myvi", "Toyota Yaris"],
-            sedan: ["Saga", "Bezza", "Toyota Vios"],
+            hatchback: ["Axia", "Myvi", "Toyota Yaris", "Honda City"],
+            sedan: ["Saga", "Bezza", "Toyota Vios", "Nissan Almera"],
             mpv: ["Alza", "Exora", "Sienta", "XPander", "Starex", "Alphard", "Toyota Hiace"],
             jentera: ["Hilux", "Lori 1-5 tan", "JCB", "Skylift"]
         };
